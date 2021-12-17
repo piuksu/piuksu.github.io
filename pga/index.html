@@ -26,8 +26,8 @@ function l() {
   }
 }
 function w(p) {
-  var tx = document.getElementById("x").innerHTML / 10 - p.coords.latitude.toString().replace(".", "");
-  var ty = document.getElementById("y").innerHTML / 10 - p.coords.longitude.toString().replace(".", "");
+  var tx = document.getElementById("x").innerHTML - p.coords.latitude.toString().replace(".", "");
+  var ty = document.getElementById("y").innerHTML - p.coords.longitude.toString().replace(".", "");
   var x = 145 + tx;
   var y = 145 + ty;
   c(x, y);
