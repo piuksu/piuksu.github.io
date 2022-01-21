@@ -1,326 +1,410 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 <title>TakPik - Piuksu</title>
-<link rel="icon" href="logo.png">
+<link rel="icon" href="https://takistuspiiksir.w3spaces.com/logo.png">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="keywords" content="TakPik, #takpik, #piuksu, takistuspiiksir, piuksu, parim, mÃĪng, online mÃĪng">
-<meta name="description" content="TakPik ehk takistuspiiksir on piuksu tootetud mÃĪng!">
-<meta name="author" content="Rasmus Luure (Ãitah w3schools-ile (https://www.w3schools.com/) ja stackoverflow-le (https://stackoverflow.com/))">
+<meta name="keywords" content="TakPik, takistuspiiksir, piuksu, parim, mäng, online mäng">
+<meta name="description" content="TakPik ehk takistuspiiksir on piuksu tootetud mäng!">
+<meta name="author" content="Rasmus Luure (Aitäh w3schools-ile (https://www.w3schools.com/) ja stackoverflow-le (https://stackoverflow.com/))">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
 <style> 
-th {
-  background-color: yellow;
-}
 body {
   background-color: yellow;
-  font-family: arial;
+	font-family: 'Balsamiq Sans', arial;
 }
-table {
+.sl {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background-color: red;
+  border-radius: 25px;
+}
+
+.sl:hover {
+  opacity: 0.7;
+}
+
+.sl::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 30px;
+  height: 30px;
+  background-color: yellow;
+  border: 1px solid black;
+  opacity: 0.8;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.sl::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  background-color: yellow;
+  border: 1px solid black;
+  opacity: 0.8;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.teade {
+  position: fixed;
+  animation-name: anim;
+  animation-duration: 6s;
+  width: 50%;
+  height: 10vh;
+  background-color: rgba(255, 175, 00, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 10vh;
+  right: 25%;
+  left: 25%;
+  top: -20vh;
+  text-align: center;
+}
+@media only screen and (max-width: 550px) {
+  .teade {
+    width: 80%;
+    right: 10%;
+    left: 10%;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .teade {
+    width: 90%;
+    right: 5%;
+    left: 5%;
+  }
+}
+@keyframes anim {
+  0%   {top: -20vh;}
+  3%   {top: 10vh;}
+  10%   {top: 30vh;}
+  85%   {top: 30vh;}
+  90%   {top: 20vh;}
+  100% {top: -20vh;display: none;}
+}
+#table {
   width: 100%;
   height: 80vh;
   border: 5px solid black;
 }
-h1 {text-align: center; font-family: arial;}
-button {
+#table th {background-color: yellow;}
+#s {text-align: center; font-family: arial;}
+.b {
   background-color: orange;
   width: 100%;
   border-radius: 50%;
   border: none;
   color: black;
 }
+.n {
+  display: none;
+}
+.h1 {
+	text-align: center;
+	font-family: 'Balsamiq Sans', arial;
+}
+.modal {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  padding-top: 10vh;
+  padding-left: 10%;
+  margin: 0px;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(255, 0, 0, 50%);
+}
+.div-contect {
+  background-color: yellow;
+  width: calc(80% - 20px);
+  height: calc(80vh - 20px);
+  padding: 10px;
+  border-radius: 10px;
+}
+.c {
+  text-align: center;
+}
+.b {
+  width: 45%;
+  padding: 10px;
+  background-color: #fa0;
+  border: 3px solid black;
+  border-radius: 45%;
+  text-align: center;
+	font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.b:hover {
+  background-color: #fc0;
+}
+.bb {
+  width: 100%;
+  position: realtive;
+  top: 0px;
+  margin-top: 30px;
+}
 </style>
 </head>
 <body>
-<p id="pea" style="display: none;"></p>
-<table onclick="bo();">
-<tr>
-<th onclick="n39()" id="a1"></th>
-<th onclick="n39()" id="a2"></th>
-<th onclick="n39()" id="a3"></th>
-<th onclick="n39()" id="a4"></th>
-<th onclick="n39()" id="a5"></th>
-<th onclick="n37()" id="a6"></th>
-<th onclick="n37()" id="a7"></th>
-<th onclick="n37()" id="a8"></th>
-<th onclick="n37()" id="a9"></th>
-<th onclick="n37()" id="a10"></th>
-</tr>
-<tr>
-<th onclick="n39()" id="b1"></th>
-<th onclick="n39()" id="b2"></th>
-<th onclick="n39()" id="b3"></th>
-<th onclick="n39()" id="b4"></th>
-<th onclick="n39()" id="b5"></th>
-<th onclick="n37()" id="b6"></th>
-<th onclick="n37()" id="b7"></th>
-<th onclick="n37()" id="b8"></th>
-<th onclick="n37()" id="b9"></th>
-<th onclick="n37()" id="b10"></th>
-</tr>
-<tr>
-<th onclick="n39()" id="c1"></th>
-<th onclick="n39()" id="c2"></th>
-<th onclick="n39()" id="c3"></th>
-<th onclick="n39()" id="c4"></th>
-<th onclick="n39()" id="c5"></th>
-<th onclick="n37()" id="c6"></th>
-<th onclick="n37()" id="c7"></th>
-<th onclick="n37()" id="c8"></th>
-<th onclick="n37()" id="c9"></th>
-<th onclick="n37()" id="c10"></th>
-</tr>
-<tr>
-<th onclick="n39()" id="d1"></th>
-<th onclick="n39()" id="d2"></th>
-<th onclick="n39()" id="d3"></th>
-<th onclick="n39()" id="d4"></th>
-<th onclick="n39()" id="d5"></th>
-<th onclick="n37()" id="d6"></th>
-<th onclick="n37()" id="d7"></th>
-<th onclick="n37()" id="d8"></th>
-<th onclick="n37()" id="d9"></th>
-<th onclick="n37()" id="d10"></th>
-</tr>
-<tr>
-<th onclick="n39()" id="e1"></th>
-<th onclick="n39()" id="e2"></th>
-<th onclick="n39()" id="e3"></th>
-<th onclick="n39()" id="e4"></th>
-<th onclick="n39()" id="e5"></th>
-<th onclick="n37()" id="e6"></th>
-<th onclick="n37()" id="e7"></th>
-<th onclick="n37()" id="e8"></th>
-<th onclick="n37()" id="e9"></th>
-<th onclick="n37()" id="e10"></th>
-</tr>
+<table id="table">
+  <tr>
+    <th onclick="l('v');" id="a1"></th>
+    <th onclick="l('v');" id="a2"></th>
+    <th onclick="l('v');" id="a3"></th>
+    <th onclick="l('v');" id="a4"></th>
+    <th onclick="l('v');" id="a5"></th>
+    <th onclick="l('p');" id="a6"></th>
+    <th onclick="l('p');" id="a7"></th>
+    <th onclick="l('p');" id="a8"></th>
+    <th onclick="l('p');" id="a9"></th>
+    <th onclick="l('p');" id="a10"></th>
+  </tr>
+  <tr>
+    <th onclick="l('v');" id="b1"></th>
+    <th onclick="l('v');" id="b2"></th>
+    <th onclick="l('v');" id="b3"></th>
+    <th onclick="l('v');" id="b4"></th>
+    <th onclick="l('v');" id="b5"></th>
+    <th onclick="l('p');" id="b6"></th>
+    <th onclick="l('p');" id="b7"></th>
+    <th onclick="l('p');" id="b8"></th>
+    <th onclick="l('p');" id="b9"></th>
+    <th onclick="l('p');" id="b10"></th>
+  </tr>
+  <tr>
+    <th onclick="l('v');" id="c1"></th>
+    <th onclick="l('v');" id="c2"></th>
+    <th onclick="l('v');" id="c3"></th>
+    <th onclick="l('v');" id="c4"></th>
+    <th onclick="l('v');" id="c5"></th>
+    <th onclick="l('p');" id="c6"></th>
+    <th onclick="l('p');" id="c7"></th>
+    <th onclick="l('p');" id="c8"></th>
+    <th onclick="l('p');" id="c9"></th>
+    <th onclick="l('p');" id="c10"></th>
+  </tr>
+  <tr>
+    <th onclick="l('v');" id="d1"></th>
+    <th onclick="l('v');" id="d2"></th>
+    <th onclick="l('v');" id="d3"></th>
+    <th onclick="l('v');" id="d4"></th>
+    <th onclick="l('v');" id="d5"></th>
+    <th onclick="l('p');" id="d6"></th>
+    <th onclick="l('p');" id="d7"></th>
+    <th onclick="l('p');" id="d8"></th>
+    <th onclick="l('p');" id="d9"></th>
+    <th onclick="l('p');" id="d10"></th>
+  </tr>
+  <tr>
+    <th onclick="l('v');" id="e1"></th>
+    <th onclick="l('v');" id="e2"></th>
+    <th onclick="l('v');" id="e3"></th>
+    <th onclick="l('v');" id="e4"></th>
+    <th onclick="l('v');" id="e5"></th>
+    <th onclick="l('p');" id="e6"></th>
+    <th onclick="l('p');" id="e7"></th>
+    <th onclick="l('p');" id="e8"></th>
+    <th onclick="l('p');" id="e9"></th>
+    <th onclick="l('p');" id="e10"></th>
+  </tr>
 </table>
-<h1 id="h1">Vajuta</h1>
-<button onclick="alert('Paus');">Paus</button><br>
-<!--<button onclick="document.getElementById('b').click();">Mine menÃžÃžse</button>-->
-<a id="a" href="index.html"></a>
-<a id="b" href="menu.html"></a>
+<h1 class="h1">Kiirus: <span id="k">800</span> millisekundit, Punktid: <span id="p">0</span>, Superpunktid: <span id="s">0</span></h1>
+<button style="width:100%;height: 5vh; border-radius: 100%; font-size: 13px; padding: 5px;" class="b" onclick="paus(this);" id="paus">Alusta</button>
+<p id="kk" class="n">1</p>
+<p id="jat" class="n">1</p>
+<p id="start" class="n">0</p>
+<!--<p id="s" class="n">0</p>-->
+<div id="teade">
+</div>
+<div id="modalu"></div>
 <script>
-var kiirus = 1000;
-var nupp = 5;
-allaules(nupp);
-function n37() {
-  var an = document.getElementById("pea").innerHTML;
-  var num1 = ["", 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  allaules(num1[an]);
+function start() {
+  if (document.getElementById("start").innerHTML == "0") {
+    document.getElementById("jat").innerHTML = "1";
+		n();
+	}
+	document.getElementById("start").innerHTML++;
 }
-function n39() {
-  var an = document.getElementById("pea").innerHTML;
-  var num2 = ["", 1, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  allaules(num2[an]);
-}
-var bon = 0;
-function bo() {
-  if (bon == 0) {bon = 1; jargminerida();}
-}
-function allaules(nupp) {
-   document.getElementById("a" + nupp).style.backgroundColor = "orange";
-   document.getElementById("pea").innerHTML = nupp;
-   if (nupp !== 1) {document.getElementById("a1").style.backgroundColor = "yellow";}
-   if (nupp !== 2) {document.getElementById("a2").style.backgroundColor = "yellow";}
-   if (nupp !== 3) {document.getElementById("a3").style.backgroundColor = "yellow";}
-   if (nupp !== 4) {document.getElementById("a4").style.backgroundColor = "yellow";}
-   if (nupp !== 5) {document.getElementById("a5").style.backgroundColor = "yellow";}
-   if (nupp !== 6) {document.getElementById("a6").style.backgroundColor = "yellow";}
-   if (nupp !== 7) {document.getElementById("a7").style.backgroundColor = "yellow";}
-   if (nupp !== 8) {document.getElementById("a8").style.backgroundColor = "yellow";}
-   if (nupp !== 9) {document.getElementById("a9").style.backgroundColor = "yellow";}
-   if (nupp !== 10) {document.getElementById("a10").style.backgroundColor = "yellow";}
-   var suvanum = Math.floor(Math.random() * 10) + 1;
-   var suvanumb = Math.floor(Math.random() * 2) + 1;
-   if (suvanumb == 1) {
-     document.getElementById("e" + suvanum).style.backgroundColor = "#00f";
-   }
-   else {
-     document.getElementById("e" + suvanum).style.backgroundColor = "#55aaff";
-   }
-}
-var punktid = 0;
-function jargminerida() {
-   if (document.getElementById("b" + document.getElementById("pea").innerHTML).style.backgroundColor == "rgb(0, 0, 255)") {kiirus = kiirus + 300;}
-   if (document.getElementById("b" + document.getElementById("pea").innerHTML).style.backgroundColor == "rgb(85, 170, 255)") {kiirus = kiirus - 100;}
-   if (document.getElementById("b" + document.getElementById("pea").innerHTML).style.backgroundColor == "rgb(0, 255, 0)") {punktid = punktid + 10;}
-   if (document.getElementById("b" + document.getElementById("pea").innerHTML).style.backgroundColor == "rgb(0, 170, 0)") {kiirusv = prompt("Sisesta kiirus:", "Pane koma asemel punkt"); kiirus = kiirusv  * 1000;}
-   if (document.getElementById("b" + document.getElementById("pea").innerHTML).style.backgroundColor == "red") {alert("Laksid punasele pihta!  )-: \nPunktid: " + punktid); document.getElementById("IF").src = "https://1100.ee/piuksu/tpt.php?l=TakPik&ta=" + punktid + "&tb=" + kiirus; document.getElementById("a").click();}
-   document.getElementById("b1").style.backgroundColor = "yellow";
-   document.getElementById("b2").style.backgroundColor = "yellow";
-   document.getElementById("b3").style.backgroundColor = "yellow";
-   document.getElementById("b4").style.backgroundColor = "yellow";
-   document.getElementById("b5").style.backgroundColor = "yellow";
-   document.getElementById("b6").style.backgroundColor = "yellow";
-   document.getElementById("b7").style.backgroundColor = "yellow";
-   document.getElementById("b8").style.backgroundColor = "yellow";
-   document.getElementById("b9").style.backgroundColor = "yellow";
-   document.getElementById("b10").style.backgroundColor = "yellow";
-   var c1 = document.getElementById("c1").style.backgroundColor;
-   var c2 = document.getElementById("c2").style.backgroundColor;
-   var c3 = document.getElementById("c3").style.backgroundColor;
-   var c4 = document.getElementById("c4").style.backgroundColor;
-   var c5 = document.getElementById("c5").style.backgroundColor;
-   var c6 = document.getElementById("c6").style.backgroundColor;
-   var c7 = document.getElementById("c7").style.backgroundColor;
-   var c8 = document.getElementById("c8").style.backgroundColor;
-   var c9 = document.getElementById("c9").style.backgroundColor;
-   var c10 = document.getElementById("c10").style.backgroundColor;
-   document.getElementById("b1").style.backgroundColor = c1;
-   document.getElementById("b2").style.backgroundColor = c2;
-   document.getElementById("b3").style.backgroundColor = c3;
-   document.getElementById("b4").style.backgroundColor = c4;
-   document.getElementById("b5").style.backgroundColor = c5;
-   document.getElementById("b6").style.backgroundColor = c6;
-   document.getElementById("b7").style.backgroundColor = c7;
-   document.getElementById("b8").style.backgroundColor = c8;
-   document.getElementById("b9").style.backgroundColor = c9;
-   document.getElementById("b10").style.backgroundColor = c10;
-   document.getElementById("c1").style.backgroundColor = "yellow";
-   document.getElementById("c2").style.backgroundColor = "yellow";
-   document.getElementById("c3").style.backgroundColor = "yellow";
-   document.getElementById("c4").style.backgroundColor = "yellow";
-   document.getElementById("c5").style.backgroundColor = "yellow";
-   document.getElementById("c6").style.backgroundColor = "yellow";
-   document.getElementById("c7").style.backgroundColor = "yellow";
-   document.getElementById("c8").style.backgroundColor = "yellow";
-   document.getElementById("c9").style.backgroundColor = "yellow";
-   document.getElementById("c10").style.backgroundColor = "yellow";
-   var d1 = document.getElementById("d1").style.backgroundColor;
-   var d2 = document.getElementById("d2").style.backgroundColor;
-   var d3 = document.getElementById("d3").style.backgroundColor;
-   var d4 = document.getElementById("d4").style.backgroundColor;
-   var d5 = document.getElementById("d5").style.backgroundColor;
-   var d6 = document.getElementById("d6").style.backgroundColor;
-   var d7 = document.getElementById("d7").style.backgroundColor;
-   var d8 = document.getElementById("d8").style.backgroundColor;
-   var d9 = document.getElementById("d9").style.backgroundColor;
-   var d10 = document.getElementById("d10").style.backgroundColor;
-   document.getElementById("c1").style.backgroundColor = d1;
-   document.getElementById("c2").style.backgroundColor = d2;
-   document.getElementById("c3").style.backgroundColor = d3;
-   document.getElementById("c4").style.backgroundColor = d4;
-   document.getElementById("c5").style.backgroundColor = d5;
-   document.getElementById("c6").style.backgroundColor = d6;
-   document.getElementById("c7").style.backgroundColor = d7;
-   document.getElementById("c8").style.backgroundColor = d8;
-   document.getElementById("c9").style.backgroundColor = d9;
-   document.getElementById("c10").style.backgroundColor = d10;
-   document.getElementById("d1").style.backgroundColor = "yellow";
-   document.getElementById("d2").style.backgroundColor = "yellow";
-   document.getElementById("d3").style.backgroundColor = "yellow";
-   document.getElementById("d4").style.backgroundColor = "yellow";
-   document.getElementById("d5").style.backgroundColor = "yellow";
-   document.getElementById("d6").style.backgroundColor = "yellow";
-   document.getElementById("d7").style.backgroundColor = "yellow";
-   document.getElementById("d8").style.backgroundColor = "yellow";
-   document.getElementById("d9").style.backgroundColor = "yellow";
-   document.getElementById("d10").style.backgroundColor = "yellow";
-   var e1 = document.getElementById("e1").style.backgroundColor;
-   var e2 = document.getElementById("e2").style.backgroundColor;
-   var e3 = document.getElementById("e3").style.backgroundColor;
-   var e4 = document.getElementById("e4").style.backgroundColor;
-   var e5 = document.getElementById("e5").style.backgroundColor;
-   var e6 = document.getElementById("e6").style.backgroundColor;
-   var e7 = document.getElementById("e7").style.backgroundColor;
-   var e8 = document.getElementById("e8").style.backgroundColor;
-   var e9 = document.getElementById("e9").style.backgroundColor;
-   var e10 = document.getElementById("e10").style.backgroundColor;
-   document.getElementById("d1").style.backgroundColor = e1;
-   document.getElementById("d2").style.backgroundColor = e2;
-   document.getElementById("d3").style.backgroundColor = e3;
-   document.getElementById("d4").style.backgroundColor = e4;
-   document.getElementById("d5").style.backgroundColor = e5;
-   document.getElementById("d6").style.backgroundColor = e6;
-   document.getElementById("d7").style.backgroundColor = e7;
-   document.getElementById("d8").style.backgroundColor = e8;
-   document.getElementById("d9").style.backgroundColor = e9;
-   document.getElementById("d10").style.backgroundColor = e10;
-   document.getElementById("e1").style.backgroundColor = "yellow";
-   document.getElementById("e2").style.backgroundColor = "yellow";
-   document.getElementById("e3").style.backgroundColor = "yellow";
-   document.getElementById("e4").style.backgroundColor = "yellow";
-   document.getElementById("e5").style.backgroundColor = "yellow";
-   document.getElementById("e6").style.backgroundColor = "yellow";
-   document.getElementById("e7").style.backgroundColor = "yellow";
-   document.getElementById("e8").style.backgroundColor = "yellow";
-   document.getElementById("e9").style.backgroundColor = "yellow";
-   document.getElementById("e10").style.backgroundColor = "yellow";
-   var suvanum2 = Math.floor(Math.random() * 10) + 1;
-   document.getElementById("e" + suvanum2).style.backgroundColor = "#55aaff";
-   var suvanum3 = Math.floor(Math.random() * 10) + 1;
-   document.getElementById("e" + suvanum3).style.backgroundColor = "#00f";
-   var suvanum4 = Math.floor(Math.random() * 10) + 1;
-   var suvanum8 = Math.floor(Math.random() * 2) + 1;
-   if (suvanum8 == 1) {
-     document.getElementById("e" + suvanum4).style.backgroundColor = "#00ff00";
-   }
-   else {
-     document.getElementById("e" + suvanum4).style.backgroundColor = "#00aa00";
-   }
-   var suvanum5 = Math.floor(Math.random() * 10) + 1;
-   document.getElementById("e" + suvanum5).style.backgroundColor = "red";
-   var suvanum6 = Math.floor(Math.random() * 10) + 1;
-   document.getElementById("e" + suvanum6).style.backgroundColor = "red";
-   var suvanum7 = Math.floor(Math.random() * 10) + 1;
-   document.getElementById("e" + suvanum7).style.backgroundColor = "red";
-   if (3600000 < kiirus) {kiirus = kiirus + 3600000;}
-   if (60000 < kiirus && 3600000 > kiirus) {kiirus = kiirus + 10000;}
-   if (50000 < kiirus && 60000 > kiirus) {kiirus = kiirus + 5000;}
-   if (30000 < kiirus && 50000 > kiirus) {kiirus = kiirus + 1000;}
-   if (15000 < kiirus && 30000 > kiirus) {kiirus = kiirus + 500;}
-   if (10000 < kiirus && 15000 > kiirus) {kiirus = kiirus + 100;}
-   if (5000 < kiirus && 10000 > kiirus) {kiirus = kiirus + 50;}
-   if (1010 < kiirus && 5000 > kiirus) {kiirus = kiirus + 30;}
-   if (600 < kiirus && 1010 > kiirus) {kiirus = kiirus - 15;}
-   if (400 < kiirus && 600 > kiirus) {kiirus = kiirus - 10;}
-   if (300 < kiirus && 400 > kiirus) {kiirus = kiirus - 4;}
-   if (300 > kiirus && 1 < kiirus) {kiirus = kiirus - 1;}  
-   if (kiirus == 1) {}
-   punktid = punktid + 1;
-   document.getElementById("h1").innerHTML = "Kiirus: " + kiirus / 1000 + " sekontit, " + punktid + " punkti.";
-   setTimeout(jargminerida, kiirus);
-}
-document.onkeydown = liigu;
-function liigu() {
+k(1);
+document.onkeydown = v;
+function v() {
   var KeyID = event.keyCode;
   switch(KeyID)  {
-  case 37:
-  n39();
-  break;
-  case 39:
-  n37()
-  break;
-  case 65:
-  n39();
-  break;
-  case 68:
-  n37()
-  break;
-  case 66:
-  n39();
-  break;
-  case 77:
-  n37()
-  break;
-  case 72:
-  n39();
-  break;
-  case 75:
-  n37()
-  break;
-  case 74:
-  n39();
-  break;
-  case 76:
-  n37()
-  break;
- }
+    case 37:
+      l('v');
+      break;
+    case 39:
+      l('p')
+      break;
+    case 65:
+      l('v');
+      break;
+    case 68:
+      l('p')
+      break;
+    case 66:
+      l('v');
+      break;
+    case 77:
+      l('p')
+      break;
+    case 72:
+      l('v');
+      break;
+    case 75:
+      l('p')
+      break;
+    case 74:
+      l('v');
+      break;
+    case 76:
+      l('p')
+      break;
+	}
+}
+function l(ls) {
+  var kk = document.getElementById("kk").innerHTML;
+  if (ls == "v") {
+    var ll1 = ["", 1, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    k(ll1[kk]);
+  } else if (ls == "p") {
+    var ll2 = ["", 2, 3, 4, 5, 6, 7, 8, 9, 10, 10];
+    k(ll2[kk]);
+  }
+}
+function k(kn) {
+	if (document.getElementById("jat").innerHTML == "1") {
+		var kk = document.getElementById("kk").innerHTML;
+		document.getElementById("a" + kk).style.backgroundColor = "yellow";
+		document.getElementById("a" + kn).style.backgroundColor = "orange";
+		document.getElementById("kk").innerHTML = kn;
+	}
+}
+function n() {
+  if (document.getElementById("jat").innerHTML == "1") {
+    var na, nb, nc, nd;
+		if (document.getElementById("b" + document.getElementById("kk").innerHTML).style.backgroundColor == "rgb(255, 0, 0)") {
+			end();
+		}
+		if (document.getElementById("b" + document.getElementById("kk").innerHTML).style.backgroundColor == "rgb(0, 0, 255)") {
+			document.getElementById("k").innerHTML = (parseInt(document.getElementById("k").innerHTML) + 299);
+		  document.getElementById("teade").innerHTML = '<div class="teade">Kiirus +300</div>';
+		}
+		if (document.getElementById("b" + document.getElementById("kk").innerHTML).style.backgroundColor == "rgb(100, 170, 255)") {
+			document.getElementById("k").innerHTML = document.getElementById("k").innerHTML - 100;
+		  document.getElementById("teade").innerHTML = '<div class="teade">Kiirus -100</div>';
+		}
+		if (document.getElementById("b" + document.getElementById("kk").innerHTML).style.backgroundColor == "rgb(0, 170, 0)") {
+			document.getElementById("teade").innerHTML = '<div class="teade">Superpunktid 15</div>';
+			document.getElementById("s").innerHTML = "15";
+		}
+		if (document.getElementById("b" + document.getElementById("kk").innerHTML).style.backgroundColor == "rgb(0, 255, 0)") {
+			if (document.getElementById("s").innerHTML == 0) {
+				document.getElementById("p").innerHTML = (parseInt(document.getElementById("p").innerHTML) + 9);
+				document.getElementById("teade").innerHTML = '<div class="teade">Punktid +10</div>';
+			} else {
+				document.getElementById("teade").innerHTML = '<div class="teade">Punktid +20</div>';
+				document.getElementById("p").innerHTML = (parseInt(document.getElementById("p").innerHTML) + 19);
+			}
+		}
+    for (na = 1; na < 11; na++) {
+      set("b" + na, "yellow");
+    }
+    for (nb = 1; nb < 11; nb++) {
+      s("b" + nb, "c" + nb);
+    }
+    for (ne = 1; ne < 11; ne++) {
+      set("c" + ne, "yellow");
+    }
+    for (nc = 1; nc < 11; nc++) {
+      s("c" + nc, "d" + nc);
+    }
+    for (nf = 1; nf < 11; nf++) {
+      set("d" + nf, "yellow");
+    }
+    for (nd = 1; nd < 11; nd++) {
+      s("d" + nd, "e" + nd);
+    }
+    for (ng = 1; ng < 11; ng++) {
+      set("e" + ng, "yellow");
+    }
+    if ((Math.floor(Math.random() * 2) + 1) == 1) {
+      set("e" + (Math.floor(Math.random() * 10) + 1), "rgb(0, 170, 0)");
+    }
+    else {
+      set("e" + (Math.floor(Math.random() * 10) + 1), "rgb(0, 255, 0)");
+    }
+    set("e" + (Math.floor(Math.random() * 10) + 1), "rgb(255, 0, 0)");
+    set("e" + (Math.floor(Math.random() * 10) + 1), "rgb(255, 0, 0)");
+    set("e" + (Math.floor(Math.random() * 10) + 1), "rgb(255, 0, 0)");
+    set("e" + (Math.floor(Math.random() * 10) + 1), "rgb(100, 170, 255)");
+    set("e" + (Math.floor(Math.random() * 10) + 1), "rgb(0, 0, 255)");
+    document.getElementById("p").innerHTML++;
+    var k = parseInt(document.getElementById("k").innerHTML);
+    if (3600000 < k) {k = k + 3600000;}
+    if (60000 < k && 3600000 >= k) {k = k + 10000;}
+    if (50000 < k && 60000 >= k) {k = k + 5000;}
+    if (30000 < k && 50000 >= k) {k = k + 1000;}
+    if (15000 < k && 30000 >= k) {k = k + 500;}
+    if (10000 < k && 15000 >= k) {k = k + 100;}
+    if (5000 < k && 10000 >= k) {k = k + 50;}
+    if (1010 < k && 5000 >= k) {k = k + 30;}
+    if (600 < k && 1010 >= k) {k = k - 15;}
+    if (400 < k && 600 >= k) {k = k - 10;}
+    if (300 < k && 400 >= k) {k = k - 4;}
+    if (300 >= k && 1 < k) {k = k - 1;}  
+    if (k == 1) {}
+		if (document.getElementById("s").innerHTML == "0") {} else {
+			document.getElementById("s").innerHTML = document.getElementById("s").innerHTML - 1;
+			document.getElementById("p").innerHTML++;
+		}
+		if (document.getElementById("s").innerHTML == 5) {
+			document.getElementById("teade").innerHTML = '<div class="teade">Superpunktid 5 veel</div>';
+		}
+    document.getElementById("k").innerHTML = k;
+    setTimeout(n, document.getElementById("k").innerHTML);
+  }
+}
+function end() {
+	document.getElementById("modalu").innerHTML = '<div class="modal"> <div class="div-contect"> <h1 class="c">Kahjuks sa kaotasid!</h1> <p class="c">Punktid: ' + document.getElementById("p").innerHTML + '</p> <div class="bb"> <button class="b" style="float: left;" onclick="load();"><b>Mängi uuesti</b></button> <button class="b" style="float: right;" onclick="document.getElementById(' + "'modalu'" + ').innerHTML = ' + "''" + ';"><b>Vaata mängu</b></button> </div> </div> </div>';
+	document.getElementById("jat").innerHTML = "0";
+	document.getElementById("paus").innerHTML = "Vaata tulemust";
+}
+function set(id, color) {
+  document.getElementById(id).style.backgroundColor = color;
+}
+function s(ida, idb) {
+  document.getElementById(ida).style.backgroundColor = document.getElementById(idb).style.backgroundColor;
+}
+function load() {
+  for (loada = 1; loada < 11; loada++) {
+    set("b" + loada, "yellow");
+  }
+  for (loadb = 1; loadb < 11; loadb++) {
+    set("c" + loadb, "yellow");
+  }
+  for (loadc = 1; loadc < 11; loadc++) {
+    set("d" + loadc, "yellow");
+  }
+  for (loadd = 1; loadd < 11; loadd++) {
+    set("e" + loadd, "yellow");
+  }
+	document.getElementById("p").innerHTML = "0";
+  document.getElementById("k").innerHTML = "800";
+  document.getElementById("jat").innerHTML = "0";
+	document.getElementById("modalu").innerHTML = ""; 
+  document.getElementById("start").innerHTML = 0;
+  document.getElementById("s").innerHTML = "0";
+  document.getElementById("paus").innerHTML = "Alusta";
+}
+function paus(t) {
+  if (t.innerHTML == "Paus") {document.getElementById("jat").innerHTML = "0";t.innerHTML = "Pausi lõpp";} 
+  else if (t.innerHTML == "Pausi lõpp") {document.getElementById("jat").innerHTML = "1";n();t.innerHTML = "Paus";} 
+  else if (t.innerHTML == "Vaata tulemust") {document.getElementById("modalu").innerHTML = '<div class="modal"> <div class="div-contect"> <h1 class="c">Kahjuks sa kaotasid!</h1> <p class="c">Punktid: ' + document.getElementById("p").innerHTML + '</p> <div class="bb"> <button class="b" style="float: left;" onclick="load();"><b>Mängi uuesti</b></button> <button class="b" style="float: right;" onclick="document.getElementById(' + "'modalu'" + ').innerHTML = ' + "''" + ';"><b>Vaata mängu</b></button> </div> </div> </div>';} 
+  else if (t.innerHTML == "Alusta") {start();t.innerHTML = "Paus";}
 }
 </script>
-<iframe id="IF" style="display: none;" src="https://1100.ee/piuksu/tpt.php?l=TakPik"/>
 </body>
-</html>
-
-
