@@ -64,6 +64,10 @@ body {
     #nk {
         display: block;
     }
+    .news, .kkk {
+        display: block;
+        width: 100%;
+    }
 }
 .new {
     background-color: #ff0;
