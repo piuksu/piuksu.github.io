@@ -45,7 +45,6 @@ body {
 }
 #nk {
     width: 100%;
-    display: block;
     float: left;
     display: table;
 }
@@ -60,6 +59,11 @@ body {
     display: block;
     background-color: #f50;
     display: table-cell;
+}
+@media only screen and (max-width: 600px) {
+    #nk {
+        display: block;
+    }
 }
 .new {
     background-color: #ff0;
