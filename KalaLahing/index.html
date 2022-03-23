@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>KalaLahing</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+
+            }
+            .s {
+                display: none;
+                width: 100%;
+                height: 100vh;
+            }
+            #sh {
+                background-image: url('taust.png');
+                background-size: 300%;
+                animation-name: ba;
+                animation-duration: 100s;
+                animation-iteration-count: infinite;
+            }
+            @keyframes ba {
+                0%   {background-position: 0px 0px;}
+                5%   {background-position: 10% 10%;}
+                10%   {background-position: 20% 30%;}
+                15%   {background-position: 50% 50%;}
+                20%   {background-position: 100% 100%;}
+                25%   {background-position: 75% 21%;}
+                30%   {background-position: 91% 0%;}
+                35%   {background-position: 0px 0px;}
+                40%   {background-position: 10% 10%;}
+                45%   {background-position: 60% 30%;}
+                50%   {background-position: 30% 60%;}
+                55%   {background-position: 70% 20%;}
+                60%   {background-position: 30% 45%;}
+                65%   {background-position: 71% 52%;}
+                70%   {background-position: 66% 66%;}
+                75%   {background-position: 0px 0px;}
+                80%   {background-position: 100% 100%;}
+                85%   {background-position: 50% 50%;}
+                90%   {background-position: 0px 0px;}
+                95%   {background-position: 100% 200%;}
+                100%   {background-position: 0px 0px;}
+            }
+            #sh_mangi:hover {
+                fill: #55f;
+            }
+            #sh_pood:hover {
+                fill: #55f;
+            }
+        </style>
+    </head>
+    <body onresize='g.lsh();'>
+        <svg id="sh" class="s">
+            <image id="sh_logo" href="logo.png" height="20%" x="0px" y="15%"/>
+            <rect id="sh_mangi" x="0" y="50%" rx="100px" ry="100px" width="80%" height="20%" fill="#00f"/>
+            <image id="sh_mangi_kiri" href="mangi.png" x="0" y="50%" height="20%"/>
+            <rect id="sh_pood" x="0" y="75%" rx="100px" ry="100px" width="80%" height="20%" fill="#00f"/>
+        </svg>
+        <svg id="sg" class="s">
+
+        </svg>
+        <script>
+            var g = {};
+            $(document.body).ready(function() {
+                $("#sh").css("display", "block");
+                g.lsh();
+            });
+            g.load = function () {
+                $("#sh").css("display", "block");
+                g.lsh();
+            }
+            g.lsh = function() {
+                if (window.innerWidth > $("#sh_logo").width()) {
+                    $("#sh_logo").attr("x", ((window.innerWidth - $("#sh_logo").width()) / 2) + "px");
+                } else {
+                    $("#sh_logo").attr("width", "100%");
+                    $("#sh_logo").attr("y", (((window.innerHeight / 2) - $("#sh_logo").height()) / 2) + "px");
+                }
+                $("#sh_mangi").attr("x", window.innerWidth / 10);
+                if (window.innerWidth > $("#sh_mangi_kiri").width()) {
+                    $("#sh_mangi_kiri").attr("x", ((window.innerWidth - $("#sh_mangi_kiri").width()) / 2) + "px");
+                } else {
+                    $("#sh_mangi_kiri").attr("height", "");
+                    $("#sh_mangi_kiri").attr("y", "100%");
+                }
+                $("#sh_pood").attr("x", window.innerWidth / 10);
+            }
+            setTimeout(g.lsh, 10)
+        </script>
+    </body>
+</html>
