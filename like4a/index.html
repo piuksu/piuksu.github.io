@@ -21,9 +21,18 @@
         </style>
     </head>
     <body onresize="load()" onclick="add();">
-        <img class="back" src="icon.png" >
-        <img src="icon.png" class="l" style="top: 0px; left: 0px;">
+        <img class="back" src="icon.png">
+        <p style="display: none;" id="ap">0</p>
         <script>
+            document.onkeydown = v;
+            function v() {
+                var KeyID = event.keyCode;
+                switch(KeyID)  {
+                    case 84:
+                        alert(document.getElementById("ap").innerHTML);
+                        break;
+                    }
+            }
             load();
             var et, el, t, l;
             function add() {
@@ -31,6 +40,8 @@
                 el = window.innerWidth - 100;
                 t = Math.floor(Math.random() * et);
                 l = Math.floor(Math.random() * el);
+                document.getElementById("ap").innerHTML++;
+                document.title = "LIKE 4a! TULEMUS: " + document.getElementById("ap").innerHTML;
                 document.body.innerHTML += '<img src="icon.png" class="l" style="top: ' + t + 'px; left: ' + l + 'px;">';
             }
             function load() {
