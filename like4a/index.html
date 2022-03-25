@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LIKE 4a!</title>
+        <link rel="icon" href="icon.png">
+        <style id="style">
+            body {
+                padding: 0px;
+                margin: 0px;
+            }
+            .back {
+                height: 100vh;
+                display: block;
+                margin: auto;
+            }
+            .l {
+                width: 100px;
+                position: absolute;
+                float: left;
+            }
+        </style>
+    </head>
+    <body onresize="load()" onclick="add();">
+        <img class="back" src="icon.png" >
+        <img src="icon.png" class="l" style="top: 0px; left: 0px;">
+        <script>
+            load();
+            var et, el, t, l;
+            function add() {
+                et = window.innerHeight - 100;
+                el = window.innerWidth - 100;
+                t = Math.floor(Math.random() * et);
+                l = Math.floor(Math.random() * el);
+                document.body.innerHTML += '<img src="icon.png" class="l" style="top: ' + t + 'px; left: ' + l + 'px;">';
+            }
+            function load() {
+                if (window.innerWidth < window.innerHeight) {
+                    document.getElementById("style").innerHTML = "body { padding: 0px; margin: 0px; } .back { width: 100%; display: block; margin-top: calc((100vh - 100%) / 2); } .l { width: 100px; position: absolute; float: left; }";
+                } else {
+                    document.getElementById("style").innerHTML = "body { padding: 0px; margin: 0px; } .back { height: 100vh; display: block; margin: auto; } .l { width: 100px; position: absolute; float: left; }";
+                }
+            }
+
+        </script>
+    </body>
+</html>
