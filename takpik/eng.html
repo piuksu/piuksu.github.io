@@ -5,9 +5,9 @@
 <link rel="icon" href="logo.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="keywords" content="TakPik, takistuspiiksir, piuksu, parim, mäng, online mäng">
-<meta name="description" content="TakPik ehk TakistusTiiksir on Piuksu tootetud mäng!">
-<meta name="author" content="Rasmus Luure (Aitäh w3schools-ile (https://www.w3schools.com/) ja stackoverflow-le (https://stackoverflow.com/))">
+<meta name="keywords" content="TakPik, takistuspiiksir, piuksu, best, game, online game">
+<meta name="description" content="TakPik or TakistusPiiksir is a game produced by Piuksu!">
+<meta name="author" content="Rasmus Luure (Thank to w3schools (https://www.w3schools.com/) and stackoverflow (https://stackoverflow.com/))">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
@@ -211,8 +211,8 @@ body {
     <th onclick="l('p');" id="e10"></th>
   </tr>
 </table>
-<h1 class="h1">Kiirus: <span id="k">800</span> ms, Punktid: <span id="p">0</span>, Superpunktid: <span id="s">0</span></h1>
-<button style="width:100%;height: 5vh; border-radius: 100%; font-size: 13px; padding: 5px;" class="b" onclick="paus(this);" id="paus">Alusta</button>
+<h1 class="h1">Speed: <span id="k">800</span> ms, Score: <span id="p">0</span>, Superpoints: <span id="s">0</span></h1>
+<button style="width:100%;height: 5vh; border-radius: 100%; font-size: 13px; padding: 5px;" class="b" onclick="paus(this);" id="paus">Start</button>
 <p id="kk" class="n">1</p>
 <p id="jat" class="n">1</p>
 <p id="start" class="n">0</p>
@@ -291,22 +291,22 @@ function n() {
 		}
 		if (document.getElementById("b" + document.getElementById("kk").innerHTML).style.backgroundColor == "rgb(0, 0, 255)") {
 			document.getElementById("k").innerHTML = (parseInt(document.getElementById("k").innerHTML) + 299);
-		  document.getElementById("teade").innerHTML = '<div class="teade">Kiirus +300</div>';
+		  document.getElementById("teade").innerHTML = '<div class="teade">Speed +300</div>';
 		}
 		if (document.getElementById("b" + document.getElementById("kk").innerHTML).style.backgroundColor == "rgb(100, 170, 255)") {
 			document.getElementById("k").innerHTML = document.getElementById("k").innerHTML - 100;
-		  document.getElementById("teade").innerHTML = '<div class="teade">Kiirus -100</div>';
+		  document.getElementById("teade").innerHTML = '<div class="teade">Speed -100</div>';
 		}
 		if (document.getElementById("b" + document.getElementById("kk").innerHTML).style.backgroundColor == "rgb(0, 170, 0)") {
-			document.getElementById("teade").innerHTML = '<div class="teade">Superpunktid 15</div>';
+			document.getElementById("teade").innerHTML = '<div class="teade">Superpoints +15</div>';
 			document.getElementById("s").innerHTML = "15";
 		}
 		if (document.getElementById("b" + document.getElementById("kk").innerHTML).style.backgroundColor == "rgb(0, 255, 0)") {
 			if (document.getElementById("s").innerHTML == 0) {
 				document.getElementById("p").innerHTML = (parseInt(document.getElementById("p").innerHTML) + 9);
-				document.getElementById("teade").innerHTML = '<div class="teade">Punktid +10</div>';
+				document.getElementById("teade").innerHTML = '<div class="teade">Score +10</div>';
 			} else {
-				document.getElementById("teade").innerHTML = '<div class="teade">Punktid +20</div>';
+				document.getElementById("teade").innerHTML = '<div class="teade">Score +20</div>';
 				document.getElementById("p").innerHTML = (parseInt(document.getElementById("p").innerHTML) + 19);
 			}
 		}
@@ -362,16 +362,16 @@ function n() {
 			document.getElementById("p").innerHTML++;
 		}
 		if (document.getElementById("s").innerHTML == 5) {
-			document.getElementById("teade").innerHTML = '<div class="teade">5 superpunkti veel</div>';
+			document.getElementById("teade").innerHTML = '<div class="teade">5 more superpoints</div>';
 		}
     document.getElementById("k").innerHTML = k;
     setTimeout(n, document.getElementById("k").innerHTML);
   }
 }
 function end() {
-	document.getElementById("modalu").innerHTML = '<div class="modal"> <div class="div-contect"> <h1 class="c">Kahjuks sa kaotasid!</h1> <p class="c">Punktid: ' + document.getElementById("p").innerHTML + '</p> <div class="bb"> <button class="b" style="float: left;" onclick="load();"><b>Mängi uuesti</b></button> <button class="b" style="float: right;" onclick="document.getElementById(' + "'modalu'" + ').innerHTML = ' + "''" + ';"><b>Vaata mängu</b></button></div> </div> </div>';
+	document.getElementById("modalu").innerHTML = '<div class="modal"> <div class="div-contect"> <h1 class="c">Unfortunately, you lost!</h1> <p class="c">Score: ' + document.getElementById("p").innerHTML + '</p> <div class="bb"> <button class="b" style="float: left;" onclick="load();"><b>Play again</b></button> <button class="b" style="float: right;" onclick="document.getElementById(' + "'modalu'" + ').innerHTML = ' + "''" + ';"><b>Watch the game</b></button></div> </div> </div>';
 	document.getElementById("jat").innerHTML = "0";
-	document.getElementById("paus").innerHTML = "Vaata tulemust";
+	document.getElementById("paus").innerHTML = "See the result";
 }
 function set(id, color) {
   document.getElementById(id).style.backgroundColor = color;
@@ -398,13 +398,13 @@ function load() {
 	document.getElementById("modalu").innerHTML = ""; 
   document.getElementById("start").innerHTML = 0;
   document.getElementById("s").innerHTML = "0";
-  document.getElementById("paus").innerHTML = "Alusta";
+  document.getElementById("paus").innerHTML = "Start";
 }
 function paus(t) {
-  if (t.innerHTML == "Paus") {document.getElementById("jat").innerHTML = "0";t.innerHTML = "Pausi lõpp";} 
-  else if (t.innerHTML == "Pausi lõpp") {document.getElementById("jat").innerHTML = "1";n();t.innerHTML = "Paus";} 
-  else if (t.innerHTML == "Vaata tulemust") {document.getElementById("modalu").innerHTML = '<div class="modal"> <div class="div-contect"> <h1 class="c">Kahjuks sa kaotasid!</h1> <p class="c">Punktid: ' + document.getElementById("p").innerHTML + '</p> <div class="bb"> <button class="b" style="float: left;" onclick="load();"><b>Mängi uuesti</b></button> <button class="b" style="float: right;" onclick="document.getElementById(' + "'modalu'" + ').innerHTML = ' + "''" + ';"><b>Vaata mängu</b></button> </div> </div> </div>';} 
-  else if (t.innerHTML == "Alusta") {start();t.innerHTML = "Paus";}
+  if (t.innerHTML == "Pause") {document.getElementById("jat").innerHTML = "0";t.innerHTML = "Pause end";} 
+  else if (t.innerHTML == "Pause end") {document.getElementById("jat").innerHTML = "1";n();t.innerHTML = "Pause";} 
+  else if (t.innerHTML == "See the result") {document.getElementById("modalu").innerHTML = '<div class="modal"> <div class="div-contect"> <h1 class="c">Unfortunately, you lost!</h1> <p class="c">Score: ' + document.getElementById("p").innerHTML + '</p> <div class="bb"> <button class="b" style="float: left;" onclick="load();"><b>Play again</b></button> <button class="b" style="float: right;" onclick="document.getElementById(' + "'modalu'" + ').innerHTML = ' + "''" + ';"><b>Watch the game</b></button></div> </div> </div>';} 
+  else if (t.innerHTML == "Start") {start();t.innerHTML = "Pause";}
 }
 </script>
 </body>
