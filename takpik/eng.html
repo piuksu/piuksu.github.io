@@ -214,14 +214,6 @@ body {
 </div>
 <div id="modalu"></div>
 <script>
-document.getElementById("modalu").innerHTML = '<div class="modal"> <div class="div-contect"> <h1 class="c">Vali keel - Select language</h1> <div class="bb"> <button class="b" style="float: left;" onclick="o(1);"><b>Estonia</b></button> <button class="b" style="float: right;" onclick="o(0);"><b>English</b></button></div> </div> </div>';
-function o(n) {
-  if (n == 0) {
-    document.getElementById("modalu").innerHTML = '';
-  } else {
-    window.location = "https://piuksu.github.io/takpik/";
-  }
-}
 function start() {
   if (document.getElementById("start").innerHTML == "0") {
     document.getElementById("jat").innerHTML = "1";
