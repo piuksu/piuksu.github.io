@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>RolPik</title>
+        <style>
+            body {
+                margin: 0px;
+                padding: 0px;
+                display: block;
+            }
+            .s {
+                width: 100%;
+                height: 100vh;
+                position: relative;
+                display: block;
+                
+            }
+            #vid {
+                width: 100%;
+                height: 100vh;
+                display: none;
+                
+            }
+            #play {
+                width: 30%;
+                margin: 0px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="s" id="start" onclick="this.style.display = 'none'; document.getElementById('vid').style.display = 'block'; document.getElementById('vid').play();">
+            <img src="play.png" id="play">
+        </div>
+        <video id="vid" >
+            <source src="vid.mp4" type="video/mp4">
+            NEVER GONNA GIVE YOU UP!
+        </video>
+    </body>
+</html>
