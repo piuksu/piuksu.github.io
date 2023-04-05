@@ -7,43 +7,84 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Piuksu on eesti ettevõtte, kes toodab mänge ja programme. Näiteks üks Piuksu mäng on TakPik.">
         <meta name="author" content="Rasmus Luure (Äitah w3schools-ile (https://www.w3schools.com/) ja stackoverflow-le (https://stackoverflow.com/))">
-        <link rel="stylesheet" href="/style/css.css">
-        <script src="/js/js.js"></script>
+        <link rel="stylesheet" id="st" href="/style/dark.css" id="stylesheet">
         <link rel="icon" href="/img/icon.png">
+        <script>
+            var k = document.cookie;
+            var na = k.indexOf("theme=") + 6;
+            if (na == 5) {
+                document.getElementById("st").setAttribute("href", "/style/dark.css");
+            } else {
+                var as = k.indexOf(";", na);
+                if (as == -1) {as = k.length;}
+                var v = k.slice(na, as);
+                if (v == "dark") {
+                    document.getElementById("st").setAttribute("href", "/style/dark.css");
+                } else if (v == "light") {
+                    document.getElementById("st").setAttribute("href", "/style/light.css");
+                }
+            }
+        </script>
+        <script src="/js/js.js"></script>
     </head>
     <body>
-        <img id="title" src="/img/logo.png" alt="PIUKSU">
+        <img id="title" src="/img/logo-dark.png" alt="PIUKSU">
+        <div id="dark-theme" onclick='ac("theme", "dark"); document.getElementById("st").setAttribute("href", "/style/dark.css"); document.getElementById("title").setAttribute("src", "/img/logo-dark.png");'></div>
+        <div id="light-theme" onclick='ac("theme", "light"); document.getElementById("st").setAttribute("href", "/style/light.css"); document.getElementById("title").setAttribute("src", "/img/logo-light.png");'></div>
+        <script>
+                if (v == "dark") {
+                    document.getElementById("title").setAttribute("src", "/img/logo-dark.png");
+                } else if (v == "light") {
+                    document.getElementById("title").setAttribute("src", "/img/logo-light.png");
+                } else {
+                    document.getElementById("title").setAttribute("src", "/img/logo-dark.png");
+                }
+        </script>
         <div id="nav">
-            <button onclick='oa("https:/" + "/piuksu.github.io/");'>KODU</button>
-            <button onclick='oa("https:/" + "/piuksu.github.io/mangud/");'>MÄNGUD</button>
-            <button onclick='oa("https:/" + "/piuksu.github.io/programmid/");'>PROGRAMMID</button>
-            <button onclick='oa("https:/" + "/piuksu.github.io/voistlused/");'>VÕISTLUSED</button>
-            <button onclick='oa("https:/" + "/piuksu.github.io/uhendus/");'>VÕTA ÜHENDUST</button>
+            <button onclick='oa("/");'>KODU</button>
+            <button onclick='oa("/mangud/");'>MÄNGUD</button>
+            <button onclick='oa("/programmid/");'>PROGRAMMID</button>
+            <button onclick='oa("/voistlused/");'>VÕISTLUSED</button>
+            <button onclick='oa("/uhendus/");'>VÕTA ÜHENDUST</button>
         </div>
         <h1 class="c">Tere tulemast meie lehele!</h1>
         <div id="nk">
             <div class="news">
-                <h1>UUDISED</h1>
+                <h1 style="margin-left: 15px; text-align: center;">UUDISED</h1>
                 <div class="new">
-                    <h2>Piuksul on uus mäng: värpik!</h2>
-                    <a href="/varpik/" class="a" style="background-color: red;">Ava</a>
-                    <p class="new-time">14:15 03.03.2022</p>
+                    <h2 style="margin-left: 10px;">Piuksu veebileht on uuendatud</h2>
+                    <p class="new-time">23:37 04.04.2023</p>
                 </div><br>
                 <div class="new">
-                    <h2>Piuksul on nüüd veebilheht!</h2>
+                    <h2 style="margin-left: 10px;">Piuksu nalja-multikas tuleb hiljem: Tõenäoliselt 30. aprillil</h2>
+                    <a href="https://youtu.be/-MXMW73hfpE" class="a">Vaata</a>
+                    <p class="new-time">23:37 15.02.2023</p>
+                </div><br>
+                <div class="new">
+                    <h2 style="margin-left: 10px;">Piuksu sai 2-aastaseks!!!</h2>
+                    <p class="new-time">15:30 15.02.2023</p>
+                </div><br>
+                <div class="new">
+                    <h2 style="margin-left: 10px;">Piuksul on uus mäng: värpik!</h2>
+                    <a href="/varpik/" class="a">Ava</a>
+                    <p class="new-time">14:15 03.03.2022</p>
+                </div><br>
+                <div class="new" style="margin-bottom: 60px">
+                    <h2 style="margin-left: 10px;">Piuksul on nüüd veebilheht!</h2>
                     <p class="new-time">14:15 03.03.2022</p>
                 </div>
             </div>
             <div class="kkk">
-                <h1>KKK</h1>
-                <h3>HETKEL POLE KÜSIMUSI</h3>
-                <a href="kkkk/" class="a">Küsi küsimus</a>
+                <h1 style="margin-left: 15px; text-align: center;">KKK</h1>
+                <h3 style="margin-left: 10px;">HETKEL POLE KÜSIMUSI</h3>
+                <a href="kkkk/" style="margin-left: 10px;" class="a">Küsi küsimus</a>
             </div>
         </div>
-        <p class="new-time">Reklaam:</p>
+        <p class="new-time" style="font-size: 1px;">Never gonna give you up! Never gonna give you up! Never gonna give you up! Never gonna give you up! Never gonna give you up! Never gonna give you up! Never gonna give you up! Never gonna give you up! Never gonna give you up! Never gonna give you up! Never gonna give you up! Never gonna give you up! Never gonna give you up! Never gonna give you up! </p>
         <div class="footer">
             <p class="copr">©PIUKSU 2022</p>
             <br>
         </div>
+        <script src="/js/js.js"></script>
     </body>
 </html>
