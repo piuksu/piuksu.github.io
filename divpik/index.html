@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DivPik</title>
+        <link rel="stylesheet" href="css.css" type="text/css"/>
+    </head>
+    <body>
+        <div id="editor">
+            <div class="title">MUUDA SIIN KASTI</div>
+            <div class="text">PIKKUS:</div>
+            <div class="textbox" contenteditable="true" id="v1">100px</div>
+            <div class="text">LAIUS:</div>
+            <div class="textbox" contenteditable="true" id="v2">100px</div>
+            <div class="text">KASTI KAUGUS ÜLEMISEST ÄÄREST:</div>
+            <div class="textbox" contenteditable="true" id="v3">50px</div>
+            <div class="text">KASTI KAUGUS VASAKUST ÄÄREST:</div>
+            <div class="textbox" contenteditable="true" id="v4">50px</div>
+            <div class="text">VÄRV:</div>
+            <div class="textbox" contenteditable="true" id="v5">#aaaaaa</div>
+            <div class="text">SERVA-PAKSUS:</div>
+            <div class="textbox" contenteditable="true" id="v6">5px</div>
+            <div class="text">SERVA-VÄRV:</div>
+            <div class="textbox" contenteditable="true" id="v7">#000000</div>
+            <div class="text">SERVA-ÜMARUS:</div>
+            <div class="textbox" contenteditable="true" id="v8">5px</div>
+            <div class="text">VARJU-VÄRV:</div>
+            <div class="textbox" contenteditable="true" id="v9">#000000</div>
+            <div class="text">VARJU-PAKSUS:</div>
+            <div class="textbox" contenteditable="true" id="v10">10px</div>
+        </div>
+        <div id="result">
+            <div id="box"></div>
+            <style id="box-style">
+                #box {
+                    margin-top: 50px;
+                    margin-left: 50px;
+                    width: 300px;
+                    height: 300px;
+                    background-color: yellow;
+                    border: 5px solid red;
+                    border-radius: 30px;
+                    box-shadow: 0px 0px 10px #000;
+                }
+            </style>
+        </div>
+        <script>
+            setInterval(run, 100);
+            function run() {
+                document.getElementById("box-style").innerHTML = "#box { margin-top: " + document.getElementById("v3").innerHTML + "; margin-left: " + document.getElementById("v4").innerHTML + "; width: " + document.getElementById("v1").innerHTML + "; height: " + document.getElementById("v2").innerHTML + "; background-color: " + document.getElementById("v5").innerHTML + "; border: " + document.getElementById("v6").innerHTML + " solid " + document.getElementById("v7").innerHTML + "; border-radius: " + document.getElementById("v8").innerHTML + "; box-shadow: 0px 0px " + document.getElementById("v10").innerHTML + " " + document.getElementById("v9").innerHTML + "; }";
+            }
+        </script>
+    </body>
+</html>
