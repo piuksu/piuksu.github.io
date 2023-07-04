@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+00 - 00:00<br>19 - 00:19<br>31 - 00:31<br>42 - 00:42<br>68 - 01:08<br>97 - 01:37<br>132 - 02:12<br>167 - 02:47
+<script>
+const xValues = [0, 19, 31, 42, 68, 97, 132, 167];
+const yValues = [1100, 1050, 1025, 1000, 950, 900, 850, 800];
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      lineTension: 0,
+      backgroundColor: "rgba(0,0,255,1.0)",
+      borderColor: "rgba(0,0,255,0.1)",
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      yAxes: [{ticks: {min: 800, max: 1100}}],
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
+
