@@ -132,7 +132,7 @@ body {
         width: 16px;
         height: 16px; }
       .emails li .star {
-        background-image: url("/static/img/unstarred.png");
+        background-image: url("img/unstarred.png");
         width: 16px;
         height: 16px;
         background-repeat: no-repeat;
@@ -141,7 +141,7 @@ body {
         top: 1px;
         cursor: pointer; }
       .emails li .star_unread {
-        background-image: url("/static/img/unstarred_unread.png"); }
+        background-image: url("img/unstarred_unread.png"); }
       .emails li div {
         vertical-align: top;
         display: inline-block;
@@ -180,7 +180,7 @@ body {
       font-weight: 300; }
       .labels h4 i {
         display: inline-block;
-        background-image: url("/static/img/arrow.png");
+        background-image: url("img/arrow.png");
         width: 14px;
         height: 14px;
         margin-right: 5px; }
