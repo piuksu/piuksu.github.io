@@ -26,7 +26,7 @@ body {
     float: left;
     background-color: var(--bg0);
 }
-rt0 {
+div[rt0] {
     display: block;
     float: left;
     width: calc(100% - 20px);
@@ -36,7 +36,7 @@ rt0 {
     font-family: var(--font);
     color: var(--tb0);
 }
-rt1 {
+div[rt1] {
     display: block;
     float: left;
     width: 100%;
@@ -45,7 +45,7 @@ rt1 {
     font-family: var(--font);
     color: var(--tb0);
 }
-rtx {
+div[rtx] {
     display: block;
     float: left;
     width: calc(100% - 30px);
@@ -54,7 +54,7 @@ rtx {
     font-family: var(--font);
     color: var(--tb0);
 }
-rbt {
+div[rb] {
     display: block;
     float: left;
     height: 50px;
@@ -70,6 +70,6 @@ rbt {
     cursor: pointer;
     transition: background 300ms;
 }
-rbt:hover {
+div[rb] {
     background-color: var(--tb1);
 }
