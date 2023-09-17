@@ -25,6 +25,7 @@ body {
     display: block;
     float: left;
     background-color: var(--bg0);
+    width: 100%;
 }
 div[rt0] {
     display: block;
